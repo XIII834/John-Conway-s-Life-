@@ -1,3 +1,4 @@
+//Построение вселенной
 function buildUniverse() {
 	var row = "";
 	var cxId = 1;
@@ -24,6 +25,7 @@ function buildUniverse() {
 	listener();
 }
 
+//Уничтожение жизни во вселенной (все клетки пустые)
 function killThemAll() {
 	var long = document.getElementsByName('long')[0].value;
 	var width = document.getElementsByName('width')[0].value;
@@ -35,6 +37,8 @@ function killThemAll() {
 	}
 }
 
+//Перестраивает вселенную в соответствии с содержанием массива mass[]
+//Используется в функции step()
 function universeRebuild() {
 	for (i = 1; i <= long * width; i++) {
 		if(mass[i]) {
@@ -46,6 +50,7 @@ function universeRebuild() {
 	}
 }
 
+//Выполняет одну итерацию вселенной
 function step() {
 	var long = document.getElementsByName('long')[0].value;
 	var width = document.getElementsByName('width')[0].value;
@@ -95,21 +100,10 @@ function step() {
 		}
 	}
 
-	// var row2 = "";
-	// var nnn = 1;
-	// for (i = 1; i <= width; i++) {
-	// 	row2 += "<p>";
-	// 	for (j = 1; j <= long; j++) {
-	// 		row2 += mass[nnn] + " | ";
-	// 		nnn++;
-	// 	}
-	// 	row2 += "</p>";
-	// }
-	// document.getElementById('test').innerHTML = row2;
-
 	universeRebuild();
 }
 
+//Выполняет множество функций step() с указанной пользователем задержкой
 function run() {
 	var delay = document.getElementsByName('delay')[0].value;
 	var sum = document.getElementsByName('sum')[0].value;
@@ -122,6 +116,7 @@ function run() {
 	}
 }
 
+//Выводит правила игры при нажатии на соответствующую кнопку
 function rules() {
 	var a = 
 	"Игра  Жизнь происходит на клеточном поле, которое, традиционно, называется  вселенная. " +
@@ -134,6 +129,12 @@ function rules() {
 }
 
 
+//Алгоритм, который позволяет пользователю заполнять пустующие клетки по след. принципу:
+//Первое нажатие мыши переводит курсор в режим заполнения клеток,
+//в этом режиме курсор заполняет жизнью любую клетку на которую он наведён.
+//Второе нажатие мыши переводит курсор в режим очищения клеток,
+//в этом режиме курсор очищает любую клетку на которую он наведён.
+//На мой взгляд этот принцип взаимодействия с полем самый удобный.
 function listener() {
 	a = [];
 	for (var t = 0; t < mass.length; t++) {
