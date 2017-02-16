@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Life</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/var.js"></script>
+</head>
+<body>
+	<span id="logo">ЖИЗНЬ</span>
+	<div id="header">
+		<input type="number" name="long"> <span>Длина</span><br>
+		<input type="number" name="width"> <span>Ширина</span>
+		<button onclick="buildUniverse()">Построить вселенную</button>
+		<button onclick="step()">Сделать шаг</button>
+		<button onclick="killThemAll()">Уничтожить жизнь!</button>
+		<button onclick="run()">Запустить развитие</button>
+		<fieldset style='display: inline-block;'><legend>Задержка и колличество итераций</legend>
+			<input type="number" name="delay" value="250" placeholder="250"> <span>мс</span> <br>
+			<input type="number" name="sum" value="15" placeholder="15"> <span>кол.</span>
+		</fieldset>
+		<button onclick="rules()">Посмотреть правила</button>
+	</div>
+	<hr>
+	<div id="universe"></div>
+<!-- 	<p id="test"></p> -->
+
+<script src="js/main.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/title.js"></script>
+<script src="js/listeners.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+fieldset button {
+	display: block;
+	font-size: 10px;
+}
+
+td {
+	width: 12px;
+	height: 12px;
+	background-color: white;
+	cursor: grab;
+	border: solid 1px #FFB48B;
+	border-radius: 2px;
+}
+
+#header button {
+	margin-left: 25px;
+}
+
+#logo {
+	font-size: 50px;
+	color: #04F8FB;
+	text-decoration: overline;
+	font-weight: bold;
+}
+
+#header {
+	display: inline-block;
+	margin-left: 25px;
+}
